@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<link href="style.css" rel="stylesheet" type="text/css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var  user_input = prompt("Please Choose a Number");
+
+if (user_input >= 5 && user_input <= 20) {
+
+    document.write("Times Table - " + user_input + " X " + user_input);
+    var table = "", tablerow;
+
+    for (var row = 0; row <= user_input; row++) {
+        tablerow = "";
+
+        for (var col = 0; col <= user_input; col++) {
+
+                if (row == 0) {
+                    tablerow += "<td>" + ((col == 0) ? " " : col) + "</td>";
+
+                } else if (col == 0) {
+                    tablerow += "<td>" + row + "</td>";
+
+                } else {
+                    tablerow += "<td>" + (row * col) + "</td>";
+
+                }
+        }
+        table += "<tr>" + tablerow + "</tr>";
+    }
+    document.write("<table border=\"1\">" + table + "</table>");
+
+} else {
+var error = "ERROR MESSAGE!";
+    var str = "The Valid input is between 5 and 20, Please Refresh the Page to start";
+    document.write(error.fontcolor("red")+ "<br/>" + str.fontcolor("red"));
+        
+    }
+</script>
+
+</body>
+</html>
